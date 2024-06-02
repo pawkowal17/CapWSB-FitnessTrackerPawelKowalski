@@ -3,6 +3,10 @@ package com.capgemini.wsb.fitnesstracker.user.api;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Interface (API) for retrieving operations on {@link User} entities.
+ * Implementing classes are responsible for fetching users from the database.
+ */
 public interface UserProvider {
 
     /**
@@ -30,5 +34,11 @@ public interface UserProvider {
      */
     List<User> findAllUsers();
 
+    /**
+     * Retrieves all users older than a specified age.
+     *
+     * @param age the age threshold
+     * @return a list of users older than the specified age
+     */
     List<User> findUsersOlderThan(int age);
 }

@@ -9,6 +9,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * Repository interface for accessing and managing {@link User} entities.
+ * Extends the {@link JpaRepository} to provide CRUD operations and additional query methods.
+ */
 interface UserRepository extends JpaRepository<User, Long> {
 
     /**
@@ -23,6 +27,12 @@ interface UserRepository extends JpaRepository<User, Long> {
                         .findFirst();
     }
 
+    /**
+     * Finds users who are older than a given age. The age is calculated based on the current date.
+     *
+     * @param age the age threshold for filtering users
+     * @return a list of users who are older than the specified age
+     */
     default List<User> findUsersOlderThan(int age) {
         LocalDate cutoffDate = LocalDate.now().minusYears(age);
         return findAll().stream()
