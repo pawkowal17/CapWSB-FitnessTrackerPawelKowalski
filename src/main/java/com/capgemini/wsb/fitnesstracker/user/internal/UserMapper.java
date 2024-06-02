@@ -21,5 +21,4 @@ class UserMapper {
                         userDto.birthdate(),
                         userDto.email());
     }
-
 }
