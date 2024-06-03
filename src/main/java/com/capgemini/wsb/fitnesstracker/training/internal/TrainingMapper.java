@@ -6,12 +6,21 @@ import com.capgemini.wsb.fitnesstracker.user.api.UserProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+/**
+ * Mapper for converting between Training entities and Training DTOs.
+ */
 @Component
 @RequiredArgsConstructor
 class TrainingMapper {
 
     private final UserProvider userProvider;
 
+    /**
+     * Converts a Training entity to a Training DTO.
+     *
+     * @param training the Training entity
+     * @return the Training DTO
+     */
     TrainingDto toDto(Training training) {
         return new TrainingDto(
                 training.getId(),
@@ -24,6 +33,13 @@ class TrainingMapper {
         );
     }
 
+    /**
+     * Converts a Training DTO to a Training entity.
+     *
+     * @param trainingDto the Training DTO
+     * @return the Training entity
+     * @throws IllegalArgumentException if the user with the provided ID is not found
+     */
     Training toEntity(TrainingDto trainingDto) {
         User user = userProvider.getUser(trainingDto.userId())
                 .orElseThrow(() -> new IllegalArgumentException("User with ID " + trainingDto.userId() + " not found"));

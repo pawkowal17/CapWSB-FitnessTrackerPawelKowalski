@@ -8,6 +8,9 @@ import lombok.*;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * Entity representing a user in the fitness tracker system.
+ */
 @Entity
 @Table(name = "users")
 @Getter
@@ -36,6 +39,14 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Training> trainings;
 
+    /**
+     * Constructs a new user with the specified details.
+     *
+     * @param firstName the first name of the user
+     * @param lastName  the last name of the user
+     * @param birthdate the birthdate of the user
+     * @param email     the email address of the user
+     */
     public User(
             final String firstName,
             final String lastName,

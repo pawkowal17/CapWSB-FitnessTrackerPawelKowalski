@@ -13,6 +13,7 @@ import java.util.Optional;
  * Repository interface for accessing and managing {@link User} entities.
  * Extends the {@link JpaRepository} to provide CRUD operations and additional query methods.
  */
+@Repository
 interface UserRepository extends JpaRepository<User, Long> {
 
     /**

@@ -84,8 +84,8 @@ class InitialDataLoader {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
             Training training1 = new Training(users.get(0),
-                                              sdf.parse("2024-01-19 08:00:00"),
-                                              sdf.parse("2024-01-19 09:30:00"),
+                                              sdf.parse("2024-06-01 08:00:00"),
+                                              sdf.parse("2024-06-01 09:30:00"),
                                               ActivityType.RUNNING,
                                               10.5,
                                               8.2);
@@ -102,8 +102,8 @@ class InitialDataLoader {
                                               5.2,
                                               5.8);
             Training training4 = new Training(users.get(3),
-                                              sdf.parse("2024-01-16 18:00:00"),
-                                              sdf.parse("2024-01-16 19:30:00"),
+                                              sdf.parse("2024-05-29 18:00:00"),
+                                              sdf.parse("2024-05-29 19:30:00"),
                                               ActivityType.RUNNING,
                                               12.3,
                                               9.0);
